@@ -112,6 +112,7 @@ nav .btn{padding:10px 20px}
 .vi h3{font:600 26px/1.15 var(--serif);max-width:320px}
 .vi p{color:var(--mut);font-size:14px;max-width:340px}
 @media(max-width:700px){.vi{flex-direction:column;gap:12px}}
+@media(max-width:600px){.nums{display:grid;grid-template-columns:1fr 1fr;gap:26px 20px;margin-top:44px}.nums strong{font-size:38px}.nums span{font-size:11px;letter-spacing:.1em}}
 /* contato */
 .ct{display:grid;grid-template-columns:5fr 6fr;gap:56px}
 .ct p{color:var(--mut);margin-bottom:16px}
@@ -194,7 +195,7 @@ nav.o{display:flex}#mb{display:block}
       <div class="card hl"><small>01</small><h3>Cartas & Drinks Autorais</h3>
         <p>Carta genérica vende pouco e qualquer concorrente copia. Estudamos o seu negócio e criamos drinks com a identidade da sua casa, que a equipe consegue repetir todos os dias.</p>
         <ul><li>Mínimo de 10 drinks autorais, criados para o seu público</li><li>Ficha técnica: o mesmo drink, com o mesmo sabor, em qualquer turno</li><li>Padrão de atendimento e de construção dos drinks</li><li>Preço calculado para proteger a sua margem</li></ul>
-        <div class="pr">Por drink (mínimo de 10)<strong>R$ 200</strong></div>
+        <div class="pr">Investimento<strong>Sob consulta</strong></div>
         <a href="#contato" data-s="Cartas & Drinks Autorais">Quero uma carta com a minha cara →</a></div>
 
       <div class="card"><small>02</small><h3>Open Bar para Eventos</h3>
@@ -205,20 +206,20 @@ nav.o{display:flex}#mb{display:block}
 
       <div class="card"><small>03</small><h3>Bartender para Eventos</h3>
         <p>Precisa reforçar a sua festa ou a sua operação? Bartenders treinados, que preparam com técnica e atendem com postura de anfitrião.</p>
-        <ul><li>Valor por bartender: R$ 400</li><li>Quantidade definida conforme o número de convidados</li></ul>
-        <div class="pr">Por bartender<strong>R$ 400</strong></div>
+        <ul><li>Profissionais qualificados</li><li>Quantidade definida conforme o número de convidados</li></ul>
+        <div class="pr">Valor do pacote<strong>Sob consulta</strong></div>
         <a href="#contato" data-s="Bartender para Eventos">Reservar meus bartenders →</a></div>
 
       <div class="card"><small>04</small><h3>Treinamento de Equipe</h3>
         <p>Equipe boa não é sorte de turno: é treinamento. Capacitamos bartenders e salão para servir com técnica e padrão. Você recebe apostila e certificado válido em todo o território nacional.</p>
-        <ul><li>Salão: R$ 1.500</li><li>Bares: R$ 1.000, exclusivo para o bartender</li><li>Garçons treinados em 1 semana</li><li>Apostila e certificado</li></ul>
-        <div class="pr">A partir de<strong>R$ 1.000</strong></div>
+        <ul><li>Bares:exclusivo para o bartender</li><li>Garçons treinados em 1 semana</li><li>Apostila e certificado</li></ul>
+        <div class="pr">Valor do pacote<strong>Sob consulta</strong></div>
         <a href="#contato" data-s="Treinamento de Equipe">Quero minha equipe no mesmo padrão →</a></div>
 
       <div class="card hl"><small>05</small><h3>Curso de Aumento de Vendas</h3>
         <p>Para bares e salões que querem vender mais com método, não com achismo. Em um turno, ao longo de 2 a 3 dias, sua equipe aprende a transformar atendimento e cardápio em faturamento.</p>
         <ul><li>1 turno, com duração de 2 a 3 dias</li><li>Apostila para consultar depois do curso</li><li>Certificado válido em todo o território nacional</li></ul>
-        <div class="pr">Investimento<strong>R$ 13.000</strong></div>
+        <div class="pr">Investimento<strong>Sob consulta</strong></div>
         <a href="#contato" data-s="Curso de Aumento de Vendas">Quero vender mais →</a></div>
 
       <div class="card"><small>06</small><h3>Consultoria</h3>
@@ -370,7 +371,7 @@ nav.o{display:flex}#mb{display:block}
 </div>
 <script>
 const $=id=>document.getElementById(id),brl=n=>'R$ '+n.toLocaleString('pt-BR');
-// header + menu
+// header + menus
 addEventListener('scroll',()=>$('h').classList.toggle('s',scrollY>40));
 $('mb').onclick=()=>$('nv').classList.toggle('o');
 $('nv').onclick=()=>$('nv').classList.remove('o');
@@ -429,7 +430,7 @@ function upd(){
   $('wtr').style.display=($('tr').value==='Não'&&S.value.startsWith('Cartas'))?'block':'none';
   $('wins').style.display=$('ins').value==='Cliente'&&S.value.startsWith('Cartas')?'block':'none';
   let e='';
-  if(S.value.startsWith('Cartas'))e='Estimativa: '+brl(Math.max(10,+$('qd').value||10)*200);
+  if(S.value.startsWith('Cartas'))e='Valor definido após conversa sobre o seu projeto.';
   if(S.value.startsWith('Open'))e='Valor do pacote definido na proposta.';
   if(S.value.startsWith('Bart')){const q=+$('qb').value||1;e='Estimativa: '+brl(q*400)}
   if(S.value.startsWith('Curso'))e='Investimento: R$ 13.000 (apostila e certificado inclusos).';
