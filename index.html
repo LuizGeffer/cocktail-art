@@ -113,6 +113,16 @@ nav .btn{padding:10px 20px}
 .vi p{color:var(--mut);font-size:14px;max-width:340px}
 @media(max-width:700px){.vi{flex-direction:column;gap:12px}}
 @media(max-width:600px){.nums{display:grid;grid-template-columns:1fr 1fr;gap:26px 20px;margin-top:44px}.nums strong{font-size:38px}.nums span{font-size:11px;letter-spacing:.1em}}
+/* rodapé */
+footer{border-top:1px solid var(--line)}
+footer .logos{border-top:0}
+.fg{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;padding-top:64px;padding-bottom:48px}
+.fg h4{font:500 11px var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.fg a{display:block;font-size:14px;color:var(--mut);padding:5px 0}.fg a:hover{color:var(--gold)}
+.fg .logo{font-size:26px;color:var(--txt);padding:0;margin-bottom:14px}
+.fbr p{font-size:14px;color:var(--mut);max-width:300px}
+.fb{border-top:1px solid var(--line);text-align:center;padding:22px 24px 84px;font-size:12px;color:var(--mut)}
+@media(max-width:860px){.fg{grid-template-columns:1fr 1fr}.fbr{grid-column:1/-1}}
 /* contato */
 .ct{display:grid;grid-template-columns:5fr 6fr;gap:56px}
 .ct p{color:var(--mut);margin-bottom:16px}
@@ -178,12 +188,6 @@ nav.o{display:flex}#mb{display:block}
   </div>
 </section>
 
-<!-- Marcas -->
-<div class="logos">
-  <p>Quem já confiou na Cocktail ART</p>
-  <div class="lt" id="lt"></div>
-</div>
-
 <!-- 3. SERVIÇOS -->
 <section id="servicos">
   <div class="wrap">
@@ -212,7 +216,7 @@ nav.o{display:flex}#mb{display:block}
 
       <div class="card"><small>04</small><h3>Treinamento de Equipe</h3>
         <p>Equipe boa não é sorte de turno: é treinamento. Capacitamos bartenders e salão para servir com técnica e padrão. Você recebe apostila e certificado válido em todo o território nacional.</p>
-        <ul><li>Bares:exclusivo para o bartender</li><li>Garçons treinados em 1 semana</li><li>Apostila e certificado</li></ul>
+        <ul><li>Bares: exclusivo para o bartender</li><li>Garçons treinados em 1 semana</li><li>Apostila e certificado</li></ul>
         <div class="pr">Valor do pacote<strong>Sob consulta</strong></div>
         <a href="#contato" data-s="Treinamento de Equipe">Quero minha equipe no mesmo padrão →</a></div>
 
@@ -355,6 +359,26 @@ nav.o{display:flex}#mb{display:block}
   </div>
 </section>
 
+<footer id="rodape">
+  <div class="logos">
+    <p>Quem já confiou na Cocktail ART</p>
+    <div class="lt" id="lt"></div>
+  </div>
+  <div class="wrap fg">
+    <div class="fbr">
+      <a href="#inicio" class="logo">COCKTAIL<span>ART</span></a>
+      <p>Consultoria, treinamento e coquetelaria premium para bares, restaurantes, marcas e eventos. Atendimento em todo o Brasil.</p>
+    </div>
+    <div><h4>Navegação</h4>
+      <a href="#inicio">Apresentação</a><a href="#sobre">Sobre</a><a href="#servicos">Serviços</a><a href="#portfolio">Portfólio</a><a href="#contato">Contato</a><a href="#duvidas">Dúvidas frequentes</a></div>
+    <div><h4>Serviços</h4>
+      <a href="#servicos">Cartas &amp; Drinks Autorais</a><a href="#servicos">Open Bar</a><a href="#servicos">Bartender para Eventos</a><a href="#servicos">Treinamento de Equipe</a><a href="#servicos">Curso de Vendas</a><a href="#servicos">Consultoria</a></div>
+    <div><h4>Contato</h4>
+      <a href="https://wa.me/554195471553" target="_blank" rel="noopener">WhatsApp</a><a href="mailto:almorinbartender@gmail.com?subject=Contato%20pelo%20site">E-mail</a><a href="https://www.instagram.com/crisalmorin/" target="_blank" rel="noopener">Instagram</a></div>
+  </div>
+  <div class="fb">© 2026 Cocktail ART. Todos os direitos reservados.</div>
+</footer>
+
 <a class="wa" href="https://wa.me/554195471553" target="_blank" rel="noopener">WhatsApp</a>
 
 <div class="md" id="md" aria-modal="true" role="dialog">
@@ -371,12 +395,12 @@ nav.o{display:flex}#mb{display:block}
 </div>
 <script>
 const $=id=>document.getElementById(id),brl=n=>'R$ '+n.toLocaleString('pt-BR');
-// header + menus
+// header + menu
 addEventListener('scroll',()=>$('h').classList.toggle('s',scrollY>40));
 $('mb').onclick=()=>$('nv').classList.toggle('o');
 $('nv').onclick=()=>$('nv').classList.remove('o');
 // logos (arquivos em img/logos/; se faltar, mostra o nome)
-const L=[['+55.jpg','+55'],['zeamais.jpg','Zé a Mais'],['punch.png','Punch'],['zephyr.jpg','Zephyr'],['sbt.jpg','SBT'],['babilonia.jpg','Babilônia'],['condor.png','Condor'],['volkswagen.png','Volkswagen']];
+const L=[['zeamais.jpg','Zé a Mais'],['zephyr.jpg','Zephyr'],['sbt.jpg','SBT'],['babilonia.jpg','Babilônia'],['condor.png','Condor'],['volkswagen.png','Volkswagen']];
 const h=L.map(([f,n])=>`<div><img src="img/logos/${f}" alt="${n}" onerror="this.parentNode.textContent='${n}'"></div>`).join('');
 $('lt').innerHTML=h+h;
 // vídeos em sequência
@@ -432,9 +456,9 @@ function upd(){
   let e='';
   if(S.value.startsWith('Cartas'))e='Valor definido após conversa sobre o seu projeto.';
   if(S.value.startsWith('Open'))e='Valor do pacote definido na proposta.';
-  if(S.value.startsWith('Bart')){const q=+$('qb').value||1;e='Estimativa: '+brl(q*400)}
-  if(S.value.startsWith('Curso'))e='Investimento: R$ 13.000 (apostila e certificado inclusos).';
-  if(S.value.startsWith('Trein'))e='Estimativa: '+($('pub').value==='Salão'?'R$ 1.500':'R$ 1.000');
+  if(S.value.startsWith('Bart'))e='Valor definido na proposta, conforme a quantidade de bartenders.';
+  if(S.value.startsWith('Curso'))e='Valor definido na proposta (apostila e certificado inclusos).';
+  if(S.value.startsWith('Trein'))e='Valor definido na proposta, conforme o público e o tamanho da equipe.';
   if(S.value==='Consultoria')e='Valor definido após conversa e coleta de dados. Duração de mais de 6 meses.';
   $('est').textContent=e;
 }
